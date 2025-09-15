@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love 💙🤍</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100vh;
+      width: 100%;
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+      transition: opacity 1s ease;
+    }
+
+    /* --- Intro Page --- */
+    #intro {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(135deg, #d4e6ff 0%, #b3d4ff 50%, #89b8ff 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #2c3e50;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23005287' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    #intro h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+      color: #2c3e50;
+      line-height: 1.3;
+    }
+
+    .heart-btn {
+      background: none;
+      border: none;
+      font-size: 4rem;
+      cursor: pointer;
+      animation: pulse 1.2s infinite, float 3s ease-in-out infinite;
+      color: #ff4d6d;
+      filter: drop-shadow(0 0 10px rgba(255, 77, 109, 0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .heart-btn:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Floating hearts in background */
+    .floating-heart {
+      position: absolute;
+      color: rgba(255, 77, 109, 0.5);
+      font-size: 1.5rem;
+      z-index: 1;
+      animation: floatAround 15s linear infinite;
+    }
+
+    @keyframes floatAround {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(100px, 500px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* --- Balloon Page --- */
+    #balloonPage {
+      display: none;
+      height: 100vh;
+      background: linear-gradient(-45deg, #e6f7ff, #cce7ff, #99ccff, #dff6ff);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    #balloonPage.show {
+      opacity: 1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #balloonPage h1 {
+      position: absolute;
+      top: 20px;
+      text-align: center;
+      width: 100%;
+      color: #004466;
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      cursor: pointer;
+      box-shadow: inset -5px -10px 10px rgba(0,0,0,0.1);
+      animation: floatUp 10s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      user-select: none;
+      z-index: 2;
+      transition: transform 0.2s ease;
+    }
+
+    .balloon:hover {
+      transform: scale(1.1);
+    }
+
+    .balloon::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), transparent 70%);
+      border-radius: inherit;
+    }
+
+    .string {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(102,102,102,1), rgba(102,102,102,0.5));
+      transform: translateX(-50%);
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-120vh) rotate(10deg); }
+    }
+
+    .message {
+      position: absolute;
+      font-size: 1.4rem;
+      color: #2c3e50;
+      background: rgba(255,255,255,0.95);
+      padding: 15px 20px;
+      border-radius: 15px;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+      z-index: 3;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      max-width: 250px;
+      transform: translateY(20px);
+    }
+
+    .message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Flower styles */
+    .flower {
+      position: absolute;
+      pointer-events: none;
+      z-index: 4;
+      font-size: 1.8rem;
+      opacity: 0;
+      animation: flowerFall 4s linear forwards;
+    }
+
+    @keyframes flowerFall {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) rotate(var(--r));
+      }
+    }
+
+    /* Sparkle/Snow Canvas */
+    #snowCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    /* Music player styling */
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .music-control:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .music-control i {
+      font-size: 24px;
+      color: #2c3e50;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      #intro h1 {
+        font-size: 2.5rem;
+      }
+      
+      #balloonPage h1 {
+        font-size: 2.2rem;
+      }
+      
+      .message {
+        font-size: 1.2rem;
+        max-width: 200px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Intro Page -->
+  <div id="intro">
+    <div class="intro-background"></div>
+    <div class="intro-content">
+      <h1>My Dearest, I've created something special just for you. I hope it makes you smile 💕</h1>
+      <button class="heart-btn" onclick="showBalloons()">❤️</button>
+    </div>
+  </div>
+
+  <!-- Balloon Page -->
+  <div id="balloonPage">
+    <canvas id="snowCanvas"></canvas>
+    <h1>Pop a balloon to discover my feelings for you 🎈</h1>
+
+    <audio id="bgMusic" loop>
+      <source src="src/music-bg.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="music-control" onclick="toggleMusic()">
+    <i class="fas fa-volume-up"></i>
+  </div>
+
+  <script>
+    // Expanded messages array with more romantic quotes
+    const messages = [
+      "You really, really make my world brighter ✨",
+      "You're amazing, just the way you are 💙",
+      "I love the way you smile 😊",
+      "With you, everything feels better 💕",
+      "You're always on my mind, everytime 🤍",
+      "Everytime, you make my heart fly 🎶",
+      "I'm literally forever grateful for having you 🌹",
+      "Your laughter is my favorite sound 💖",
+      "I fall for you more every day 💫",
+      "You are my sunshine on cloudy days 🌞",
+      "My heart skips a beat when I see you 💓",
+      "You're the missing piece I've been searching for 🔍",
+      "Loving you is the best thing that ever happened to me 🌈",
+      "You make ordinary moments extraordinary 🌟",
+      "I cherish every second with you ⏳",
+      "Your love is the greatest gift I've ever received 🎁",
+      "You're not just my love, you're my best friend 👫",
+      "I love you more than words can express 📝",
+      "You have the most beautiful soul I've ever known 💫",
+      "My favorite place is wherever you are 🗺️"
+    ];
+
+    // Flower emojis for the explosion effect
+    const flowers = ["🌹", "🌸", "💐", "🌺", "🌷", "🌻", "🥀", "💮"];
+
+    // Create floating hearts in the background
+    function createFloatingHearts() {
+      const intro = document.getElementById('intro');
+      const hearts = ['❤️', '💕', '💙', '💘', '💝', '💖', '💗'];
+      
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = Math.random() * 100 + 'vh';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+        heart.style.animationDuration = (15 + Math.random() * 15) + 's';
+        intro.appendChild(heart);
+      }
+    }
+
+    let musicPlaying = false;
+    const music = document.getElementById('bgMusic');
+
+    function showBalloons() {
+      document.getElementById("intro").style.display = "none";
+      const balloonPage = document.getElementById("balloonPage");
+      balloonPage.style.display = "block";
+      
+      setTimeout(() => {
+        balloonPage.classList.add('show');
+      }, 10);
+
+      // Start music
+      music.play().then(() => {
+        musicPlaying = true;
+      }).catch(() => {
+        console.log("Autoplay blocked, waiting for user action");
+      });
+
+      startSnow();
+      // Create more balloons by reducing the interval
+      setInterval(createBalloon, 800);
+    }
+
+    function toggleMusic() {
+      if (musicPlaying) {
+        music.pause();
+        document.querySelector('.music-control i').className = 'fas fa-volume-mute';
+      } else {
+        music.play();
+        document.querySelector('.music-control i').className = 'fas fa-volume-up';
+      }
+      musicPlaying = !musicPlaying;
+    }
+
+    function createBalloon() {
+      const balloonPage = document.getElementById("balloonPage");
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+
+      // Create different colored balloons
+      const colors = [
+        'radial-gradient(circle at 30% 30%, #ff9ecb, #ff4d8c)', // Pink
+        'radial-gradient(circle at 30% 30%, #a6e3ff, #3399ff)', // Blue
+        'radial-gradient(circle at 30% 30%, #baffb1, #5cd65c)', // Green
+        'radial-gradient(circle at 30% 30%, #ffdd94, #ffb366)', // Orange
+        'radial-gradient(circle at 30% 30%, #d9b3ff, #9966cc)',  // Purple
+        'radial-gradient(circle at 30% 30%, #ffb3ba, #ff5c65)', // Red
+        'radial-gradient(circle at 30% 30%, #ffffba, #ffff65)'   // Yellow
+      ];
+      
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+      const string = document.createElement("div");
+      string.classList.add("string");
+      balloon.appendChild(string);
+
+      balloon.style.left = Math.random() * (window.innerWidth - 100) + "px";
+      balloon.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+      balloonPage.appendChild(balloon);
+
+      balloon.addEventListener("click", () => {
+        // Create flower explosion effect
+        createFlowerExplosion(balloon);
+        
+        // Pop effect
+        balloon.style.transition = "transform 0.3s ease";
+        balloon.style.transform = "scale(1.5)";
+        balloon.style.opacity = "0";
+        
+        const msg = document.createElement("div");
+        msg.classList.add("message");
+        msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+        msg.style.left = `calc(${balloon.style.left} - 100px)`;
+        msg.style.top = (balloon.getBoundingClientRect().top - 30) + "px";
+        balloonPage.appendChild(msg);
+
+        setTimeout(() => msg.classList.add('show'), 100);
+        setTimeout(() => {
+          msg.classList.remove('show');
+          msg.style.opacity = '0';
+        }, 4000);
+        setTimeout(() => msg.remove(), 4500);
+
+        setTimeout(() => balloon.remove(), 300);
+      });
+
+      setTimeout(() => balloon.remove(), 12000);
+    }
+
+    // Create flower explosion effect when balloon is popped
+    function createFlowerExplosion(balloon) {
+      const balloonRect = balloon.getBoundingClientRect();
+      const balloonPage = document.getElementById("balloonPage");
+      
+      for (let i = 0; i < 12; i++) {
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+        
+        // Set initial position at balloon
+        flower.style.left = (balloonRect.left + balloonRect.width/2) + 'px';
+        flower.style.top = (balloonRect.top + balloonRect.height/2) + 'px';
+        
+        // Set random animation parameters
+        const tx = (Math.random() - 0.5) * 300; // translateX
+        const ty = (Math.random() - 0.5) * 300; // translateY
+        const r = (Math.random() - 0.5) * 360;  // rotation
+        
+        flower.style.setProperty('--tx', `${tx}px`);
+        flower.style.setProperty('--ty', `${ty}px`);
+        flower.style.setProperty('--r', `${r}deg`);
+        
+        balloonPage.appendChild(flower);
+        
+        // Remove flower after animation completes
+        setTimeout(() => {
+          flower.remove();
+        }, 4000);
+      }
+    }
+
+    /* --- Sparkles / Snowflakes --- */
+    function startSnow() {
+      const canvas = document.getElementById("snowCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let flakes = [];
+      for (let i = 0; i < 100; i++) {
+        flakes.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 3 + 1,
+          d: Math.random() + 1,
+          color: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`
+        });
+      }
+
+      function drawFlakes() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        for (let i = 0; i < flakes.length; i++) {
+          let f = flakes[i];
+          ctx.fillStyle = f.color;
+          ctx.moveTo(f.x, f.y);
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+        }
+        ctx.fill();
+        moveFlakes();
+      }
+
+      let angle = 0;
+      function moveFlakes() {
+        angle += 0.01;
+        for (let i = 0; i < flakes.length; i++) {
+          let f = flakes[i];
+          f.y += Math.pow(f.d, 2) + 1;
+          f.x += Math.sin(angle) * 2;
+
+          if (f.y > canvas.height) {
+            flakes[i] = {
+              x: Math.random() * canvas.width, 
+              y: 0, 
+              r: f.r, 
+              d: f.d,
+              color: `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`
+            };
+          }
+        }
+      }
+
+      setInterval(drawFlakes, 25);
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    }
+
+    // Initialize the page
+    window.onload = function() {
+      createFloatingHearts();
+    };
+  </script>
+
+</body>
+</html>
